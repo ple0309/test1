@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://swwsaucm67rx"]
+
+[ext_resource type="PackedScene" uid="uid://bkk4ddjjlc6bc" path="res://character/player.tscn" id="1_l730s"]
+[ext_resource type="PackedScene" uid="uid://bjxhuscgjdgt6" path="res://enermy/enermy.tscn" id="2_p1hyc"]
+
+[node name="main" type="Node2D"]
+
+[node name="enermy" parent="." instance=ExtResource("2_p1hyc")]
+position = Vector2(517, 332)
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("1_l730s")]

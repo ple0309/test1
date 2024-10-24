@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://bjxhuscgjdgt6"]
+
+[ext_resource type="Script" path="res://enermy/enermy.gd" id="1_5fe60"]
+[ext_resource type="Texture2D" uid="uid://d18560530jjpf" path="res://icon.svg" id="1_xe7b1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qugf7"]
+size = Vector2(11.1039, 43)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pokfy"]
+size = Vector2(36, 50)
+
+[node name="enermy" type="CharacterBody2D"]
+script = ExtResource("1_5fe60")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+self_modulate = Color(0.681016, 0.135576, 0.172874, 1)
+position = Vector2(0, 30.5)
+scale = Vector2(0.296875, 0.773438)
+texture = ExtResource("1_xe7b1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 8.5)
+scale = Vector2(2.88187, 1)
+shape = SubResource("RectangleShape2D_qugf7")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(0, 8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_pokfy")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
